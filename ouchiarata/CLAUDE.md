@@ -5,6 +5,7 @@
 4. 製作者のX（Twitter）アカウントのURLは`https://x.com/ouchiarata`である
 5. 製作者のホームページURLは`https://${osa.xyz または philtz.com}$`である
 6. ページタイトルは`$[ページタイトル]`、短い説明は`${サイト内キャッチコピー等に使用できる短い説明}`、長い説明は`${ページデスクリプション等に使用できる正式な説明}`である
+7. ドメインはCloudflareで管理されており、Vercelにデプロイされる
 
 # コード規則
 1. 変数名は`snake_case`、関数名は`camelCase`、型名は`PascalCase`、環境変数は`CONTACT_CASE`
