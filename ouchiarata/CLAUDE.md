@@ -26,8 +26,9 @@
 ## パッケージ
 1. `npm install`コマンドを用いてパッケージをインストールし、`package.json`に直接記載しない
 2. Nuxtを使用する場合はバージョン4.2.2を使用する
-3. Firebaseを使用する際は`firebase-admin`を使用し、クライアントパッケージを使用しない。
-4. 日付にまつわる処理を行う場合`date-fns`を利用する。
+3. Firebaseを使用する際は`firebase-admin`を使用し、クライアントパッケージを使用しない
+4. 日付にまつわる処理を行う場合`date-fns`を利用する
+5. AI関連の処理はVercel AI SDKを優先して利用する
 5. Unkeyを利用する際は`verifyKey()`ではなく`getUnkeyClient().keys.verify()`を利用し、有料のレート制限枠を使用する
 
 ## Google Analytics
