@@ -29,14 +29,14 @@
 3. Firebaseを使用する際は`firebase-admin`を使用し、クライアントパッケージを使用しない
 4. 日付にまつわる処理を行う場合`date-fns`を利用する
 5. AI関連の処理はVercel AI SDKを優先して利用する
-5. Unkeyを利用する際はv2 SDKを利用し、`verifyKey()`ではなく`getUnkeyClient().keys.verify()`を利用し、有料のレート制限枠を使用する
+5. `unkey`を利用する際はv2 SDKを利用する
 
 ## Google Analytics
 
 1. Cookieの利用について尋ね、同意されたら同意シグナルを送る
 2. `analytics_storage` は常に `granted`（基本的なアクセス解析は常時有効）
-3. `ad_storage`, `ad_user_data`, `ad_personalization` はデフォルト `denied`
-4. ユーザーが「同意する」を選択した場合のみ、広告系も `granted` に更新
+3. `ad_storage`, `ad_user_data`, `ad_personalization` もデフォルト `granted`
+4. ユーザーが「同意しない」を選択した場合のみ、広告系を `denied` に更新
 
 ## API設計
 1. OpenAPIに準拠する
