@@ -45,7 +45,7 @@
 4. なるべく短いパスを採用するが、やむを得ない場合は`kebab-case`を用いる
 5. 単数系を用いる（`/users`ではなく`/user`）
 6. Bearer認証を用いる
-7. ヘルスチェックエンドポイントは、公開ルートの`/api/health`と、API Keyを使用して認証する`/api/v${バージョン}/health`の二つを作成する
+7. ヘルスチェックエンドポイント構造は[draft-inadarei-api-health-check](https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check)に準拠する
 8. [Spectral](https://github.com/stoplightio/spectral)を用いてAPIをLintする
 
 
