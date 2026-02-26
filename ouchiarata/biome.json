@@ -18,7 +18,7 @@
             "quoteStyle": "double",
             "jsxQuoteStyle": "double",
             "semicolons": "asNeeded",
-            "trailingCommas": "all"
+            "trailingCommas": "none"
         }
     },
     "linter": {
