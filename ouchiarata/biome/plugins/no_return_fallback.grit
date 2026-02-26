@@ -1,15 +1,16 @@
-`return $left_value || $right_value` where {
-    register_diagnostic(
-        span = $right_value,
-        message = "Do not use || fallback in function return. Return an error on failure.",
-        severity = "error"
-    )
-}
-
-`return $left_value ?? $right_value` where {
-    register_diagnostic(
-        span = $right_value,
-        message = "Do not use ?? fallback in function return. Return an error on failure.",
-        severity = "error"
-    )
+or {
+    `return $left_value || $right_value` where {
+        register_diagnostic(
+            span = $right_value,
+            message = "Do not use || fallback in function return. Return an error on failure.",
+            severity = "error"
+        )
+    },
+    `return $left_value ?? $right_value` where {
+        register_diagnostic(
+            span = $right_value,
+            message = "Do not use ?? fallback in function return. Return an error on failure.",
+            severity = "error"
+        )
+    }
 }

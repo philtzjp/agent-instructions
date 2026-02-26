@@ -1,17 +1,18 @@
-`process.env.$env_name` where {
-    not $env_name <: r"^[A-Z][A-Z0-9_]*$",
-    register_diagnostic(
-        span = $env_name,
-        message = "Environment variable names must use CONTACT_CASE, for example APP_MODE.",
-        severity = "error"
-    )
-}
-
-`import.meta.env.$env_name` where {
-    not $env_name <: r"^[A-Z][A-Z0-9_]*$",
-    register_diagnostic(
-        span = $env_name,
-        message = "Environment variable names must use CONTACT_CASE, for example APP_MODE.",
-        severity = "error"
-    )
+or {
+    `process.env.$env_name` where {
+        not $env_name <: r"^[A-Z][A-Z0-9_]*$",
+        register_diagnostic(
+            span = $env_name,
+            message = "Environment variable names must use CONTACT_CASE, for example APP_MODE.",
+            severity = "error"
+        )
+    },
+    `import.meta.env.$env_name` where {
+        not $env_name <: r"^[A-Z][A-Z0-9_]*$",
+        register_diagnostic(
+            span = $env_name,
+            message = "Environment variable names must use CONTACT_CASE, for example APP_MODE.",
+            severity = "error"
+        )
+    }
 }

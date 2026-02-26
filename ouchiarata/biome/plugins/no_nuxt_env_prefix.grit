@@ -1,17 +1,18 @@
-`process.env.$env_name` where {
-    $env_name <: r"^NUXT(_PUBLIC)?_",
-    register_diagnostic(
-        span = $env_name,
-        message = "NUXT_ and NUXT_PUBLIC_ prefixes are forbidden for environment variables.",
-        severity = "error"
-    )
-}
-
-`import.meta.env.$env_name` where {
-    $env_name <: r"^NUXT(_PUBLIC)?_",
-    register_diagnostic(
-        span = $env_name,
-        message = "NUXT_ and NUXT_PUBLIC_ prefixes are forbidden for environment variables.",
-        severity = "error"
-    )
+or {
+    `process.env.$env_name` where {
+        $env_name <: r"^NUXT(_PUBLIC)?_",
+        register_diagnostic(
+            span = $env_name,
+            message = "NUXT_ and NUXT_PUBLIC_ prefixes are forbidden for environment variables.",
+            severity = "error"
+        )
+    },
+    `import.meta.env.$env_name` where {
+        $env_name <: r"^NUXT(_PUBLIC)?_",
+        register_diagnostic(
+            span = $env_name,
+            message = "NUXT_ and NUXT_PUBLIC_ prefixes are forbidden for environment variables.",
+            severity = "error"
+        )
+    }
 }

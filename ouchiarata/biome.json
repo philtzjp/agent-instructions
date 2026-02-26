@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
     "plugins": [
         "./biome/plugins/no_const_fallback.grit",
         "./biome/plugins/no_return_fallback.grit",
@@ -7,6 +7,14 @@
         "./biome/plugins/use_contact_case_env_name.grit",
         "./biome/plugins/no_inline_error_message.grit"
     ],
+    "files": {
+        "includes": ["src/**", "scripts/**", "biome.json", "tsconfig.json", "tsconfig.node.json", "package.json", "vite.config.ts"]
+    },
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": true
+    },
     "formatter": {
         "enabled": true,
         "indentStyle": "space",
