@@ -1,0 +1,83 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+    "plugins": [
+        "./biome/plugins/no_const_fallback.grit",
+        "./biome/plugins/no_return_fallback.grit",
+        "./biome/plugins/no_nuxt_env_prefix.grit",
+        "./biome/plugins/use_contact_case_env_name.grit",
+        "./biome/plugins/no_inline_error_message.grit"
+    ],
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 120
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "double",
+            "jsxQuoteStyle": "double",
+            "semicolons": "asNeeded",
+            "trailingCommas": "all"
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "style": {
+                "useNamingConvention": {
+                    "level": "error",
+                    "options": {
+                        "strictCase": true,
+                        "conventions": [
+                            {
+                                "selector": {
+                                    "kind": "variable"
+                                },
+                                "formats": [
+                                    "snake_case"
+                                ]
+                            },
+                            {
+                                "selector": {
+                                    "kind": "function"
+                                },
+                                "formats": [
+                                    "camelCase"
+                                ]
+                            },
+                            {
+                                "selector": {
+                                    "kind": "typeLike"
+                                },
+                                "formats": [
+                                    "PascalCase"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "useThrowNewError": "error",
+                "useThrowOnlyError": "error"
+            },
+            "suspicious": {
+                "noConsole": "error"
+            }
+        }
+    },
+    "overrides": [
+        {
+            "includes": [
+                "src/renderer/shared/utils/logger.ts"
+            ],
+            "linter": {
+                "rules": {
+                    "suspicious": {
+                        "noConsole": "off"
+                    }
+                }
+            }
+        }
+    ]
+}

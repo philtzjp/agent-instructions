@@ -1,0 +1,15 @@
+`const $const_name = $left_value || $right_value` where {
+    register_diagnostic(
+        span = $right_value,
+        message = "Do not use || fallback in const initialization. Return an error on failure.",
+        severity = "error"
+    )
+}
+
+`const $const_name = $left_value ?? $right_value` where {
+    register_diagnostic(
+        span = $right_value,
+        message = "Do not use ?? fallback in const initialization. Return an error on failure.",
+        severity = "error"
+    )
+}
