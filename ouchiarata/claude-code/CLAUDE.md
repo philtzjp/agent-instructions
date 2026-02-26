@@ -22,6 +22,7 @@
 12. 変数名はなるべくオブジェクト化して一単語に均一化する（例: `worksName` -> `works.name`）
 13. モジュラー・モノリス構造を用いる
 14. 環境変数名に`NUXT_`や`NUXT_PUBLIC_`といったプレフィクスを用いない
+15. ディレクティブ内のインラインコードを複数行記述にしない・複数行フォーマットしない（エラーが出て動かない）
 
 ## パッケージ
 1. `npm install`コマンドを用いてパッケージをインストールし、`package.json`に直接記載しない
@@ -45,7 +46,7 @@
 4. なるべく短いパスを採用するが、やむを得ない場合は`kebab-case`を用いる
 5. 単数系を用いる（`/users`ではなく`/user`）
 6. Bearer認証を用いる
-7. ヘルスチェックエンドポイント構造は[draft-inadarei-api-health-check](https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check)に準拠する
+7. ヘルスチェックエンドポイントは、公開ルートの`/api/health`と、API Keyを使用して認証する`/api/v${バージョン}/health`の二つを作成する
 8. [Spectral](https://github.com/stoplightio/spectral)を用いてAPIをLintする
 
 
@@ -54,7 +55,7 @@
 2. 環境変数が変更されたら`.env.example`を更新する
 3. 一括置換が望ましい場合、`temp/`内に`.js`スクリプトを記載して実行することでコードを修正し、使用し終わったらスクリプトを削除する
 4. バックグラウンドで`npm run dev`を実行せず、必ずユーザーに実行を促す
-5. ESLint, Prittierを導入して適宜フォーマットコマンドを実行する
+5. Biomeを導入して適宜フォーマットコマンドを実行する
 6. 常に日本語で応答する
 7. サービスバージョンの変更が必要だと判断した場合、セマンティック・バージョニングに基づき`VERSION`を更新し、`llm/version/${version}.md`を作成する。
 
