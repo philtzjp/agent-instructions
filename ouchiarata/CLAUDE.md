@@ -48,6 +48,7 @@ The keywords "MUST", "NEVER", "SHOULD", and "MAY" in this document are to be int
 5. MUST introduce Biome and run format commands as appropriate
 6. MUST always respond in Japanese
 7. IF a service version change is deemed necessary -> MUST update `VERSION` based on Semantic Versioning and create `llm/version/${version}.md`
+8. IF architecture changes -> MUST update the Mermaid diagram in `./llm/ARCHITECTURE.md`
 
 ## Commit Messages
 1. MUST use the format `type: description (in Japanese, short sentence)`
