@@ -1,8 +1,0 @@
-`new Error($message_value)` where {
-    $message_value <: r"^['\"`].*['\"`]$",
-    register_diagnostic(
-        span = $message_value,
-        message = "Inline error string literals are forbidden. Use src/renderer/shared/constants/error_messages.ts.",
-        severity = "error"
-    )
-}

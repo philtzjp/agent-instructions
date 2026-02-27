@@ -10,10 +10,21 @@ LONG_DESCRIPTION=`${ページデスクリプション等に使用できる正式
 The keywords "MUST", "NEVER", "SHOULD", and "MAY" in this document are to be interpreted as described in RFC 2119.
 
 # Code Rules
-1. MUST follow `./biome.json` (variable names in `snake_case`, function names in `camelCase`, type names in `PascalCase`, environment variable names in `CONSTANT_CASE`, indent with 4 spaces, no trailing commas, semicolons only where required, prefer double quotes)
-2. MUST follow `./biome/plugins/README.md`
-3. MUST use a modular monolith architecture
-4. NEVER write or format inline code within directives as multi-line (it causes errors and won't work)
+1. MUST use `snake_case` for variable names, `camelCase` for function names, `PascalCase` for type names, `CONSTANT_CASE` for environment variables
+2. MUST indent with 4 spaces
+3. MUST use descriptive names even if verbose (NG: `const handle = () => {}`)
+4. NEVER place semicolons where not required
+5. SHOULD prefer double quotes
+6. IF backward compatibility is deemed necessary -> MUST confirm with the user before proceeding
+7. NEVER use fallback values in constants (NG: `web_url: process.env.WEB_URL || 'http://localhost:3000'`)
+8. NEVER use fallback values in functions; MUST return an error on failure
+9. MUST define all error messages in a single file
+10. MUST define all log messages in a single file
+11. MUST define all types in files within a dedicated directory
+12. SHOULD objectify variable names to normalize them into single words (e.g., `worksName` -> `works.name`)
+13. MUST use a modular monolith architecture
+14. NEVER use prefixes such as `NUXT_` or `NUXT_PUBLIC_` for environment variable names
+15. NEVER write or format inline code within directives as multi-line (it causes errors and won't work)
 
 ## Packages
 1. MUST install packages via `npm install`; NEVER write directly into `package.json`
