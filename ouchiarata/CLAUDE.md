@@ -10,25 +10,22 @@ LONG_DESCRIPTION=`${ページデスクリプション等に使用できる正式
 The keywords "MUST", "NEVER", "SHOULD", and "MAY" in this document are to be interpreted as described in RFC 2119.
 
 # Code Rules
-1. MUST use `snake_case` for variable names, `camelCase` for function names, `PascalCase` for type names, `CONSTANT_CASE` for environment variables
-2. MUST indent with 4 spaces
-3. MUST use descriptive names even if verbose (NG: `const handle = () => {}`)
-4. NEVER place semicolons where not required
-5. SHOULD prefer double quotes
-6. IF backward compatibility is deemed necessary -> MUST confirm with the user before proceeding
-7. NEVER use fallback values in constants (NG: `web_url: process.env.WEB_URL || 'http://localhost:3000'`)
-8. NEVER use fallback values in functions; MUST return an error on failure
-9. MUST define all error messages in a single file
-10. MUST define all log messages in a single file
-11. MUST define all types in files within a dedicated directory
-12. SHOULD objectify variable names to normalize them into single words (e.g., `worksName` -> `works.name`)
-13. MUST use a modular monolith architecture
-14. NEVER use prefixes such as `NUXT_` or `NUXT_PUBLIC_` for environment variable names
-15. NEVER write or format inline code within directives as multi-line (it causes errors and won't work)
+1. MUST follow these naming and formatting conventions: `snake_case` for variables, `camelCase` for functions, `PascalCase` for types, `CONSTANT_CASE` for env vars, 4-space indent, no unnecessary semicolons, prefer double quotes
+2. MUST use descriptive names even if verbose (NG: `const handle = () => {}`)
+3. IF backward compatibility is deemed necessary -> MUST confirm with the user before proceeding
+4. NEVER use fallback values in constants (NG: `web_url: process.env.WEB_URL || 'http://localhost:3000'`)
+5. NEVER use fallback values in functions; MUST return an error on failure
+6. MUST define all error messages in a single file
+7. MUST define all log messages in a single file
+8. MUST define all types in files within a dedicated directory
+9. SHOULD objectify variable names to normalize them into single words (e.g., `worksName` -> `works.name`)
+10. MUST use a modular monolith architecture
+11. NEVER use prefixes such as `NUXT_` or `NUXT_PUBLIC_` for environment variable names
+12. NEVER write or format inline code within directives as multi-line (it causes errors and won't work)
 
 ## Packages
 1. MUST install packages via `npm install`; NEVER write directly into `package.json`
-2. IF using Nuxt -> MUST use version 4.2.2
+2. IF using Nuxt -> MUST use `latest` version
 3. IF using Firebase -> MUST use `firebase-admin`; NEVER use client packages
 4. IF processing dates -> MUST use `date-fns`
 5. IF implementing AI-related features -> SHOULD prefer Vercel AI SDK
@@ -50,6 +47,7 @@ The keywords "MUST", "NEVER", "SHOULD", and "MAY" in this document are to be int
 6. MUST use Bearer authentication
 7. Health check endpoint structure MUST conform to [draft-inadarei-api-health-check](https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check)
 8. MUST lint the API using [Spectral](https://github.com/stoplightio/spectral)
+9. SHOULD use [Hono](https://hono.dev/) as the HTTP framework; IF building an MCP server -> MUST use Hono with `@hono/mcp`
 
 # Operational Rules
 1. MUST record all data models in `llm/models.yaml`; IF implementation changes -> MUST update this file
